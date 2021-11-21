@@ -10,23 +10,23 @@ int main(){
   int num1, num2;
   vector<string> data1, data2;
 
-  //get student preferences
+  //get students
   cout<<"Enter number of students"<<endl;
   cin>>num1;
   cout<<"Enter students in order"<<endl;
 
-  for (int i = 0; i < num1; i++) 
+  for (int i = 0; i < num1; i++)
   {
 	string input;
 	data1.push_back(input);
 	cin >> input;
   }
-  for(int j= 0; j < num1; j++)
+  for(auto j: data1)
   {
-    cout<<data1[j]<<endl;
+    cout<<j<<endl;
   }
 
-  // Get school preferences
+  // Get schools
   cout << "Enter number of schools" << endl;
   cin >> num2;
   cout << "Enter schools in order" << endl;
@@ -50,4 +50,3 @@ vector<string> match(vector<string> students, vector<string> student_pref, vecto
     vector<string> outcome = students;
     return outcome;
 }
-
