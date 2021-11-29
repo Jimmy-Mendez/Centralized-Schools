@@ -5,7 +5,7 @@
 
 
 using namespace std;
-vector<string> match(vector<string> students, vector<string> student_pref, vector<string> schools, vector<string> school_pref);
+vector<string> match(vector<string> students, vector<string> student_pref, vector<string> schools, vector<string> school_pref, string algo);
 
 
 int main(){
@@ -62,6 +62,9 @@ int main(){
     output << data2[i] << "\n";
   }
 
+  string a;
+  cin>>a;
+
 
   //close output file
    output.close();
@@ -69,10 +72,24 @@ int main(){
 }
 
 //In here put switch statement for corresponding algo
-vector<string> match(vector<string> students, vector<string> student_pref, vector<string> schools, vector<string> school_pref)
+vector<string> match(vector<string> students, vector<string> student_pref, vector<string> schools, vector<string> school_pref, string algo)
 {
 	//use vectors to match using some mechanism
     vector<string> outcome = students;
+    switch(algo)
+    {
+      case "Boston":
+    // code block
+      break;
+      case "DA":
+    // code block
+      break;
+      case "TTC":
+    // code block
+      break;
+      default:
+    // code block
+    }
     return outcome;
 }
 
@@ -80,4 +97,4 @@ vector<string> match(vector<string> students, vector<string> student_pref, vecto
 
 //Deferred Acceptance
 
-//Gale Shapley
+//Top Trading Cycles
