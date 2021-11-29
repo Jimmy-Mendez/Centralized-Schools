@@ -12,7 +12,8 @@ int main(){
   int num1, num2;
   ofstream output;
   output.open ("output.txt");
-  vector<string> data1, data2;
+  vector<string> student_names, school_names;
+  vector<vector<string>> student_pref,school_pref;
 
   //get students
 
@@ -28,14 +29,14 @@ int main(){
   {
 	string input;
   cin >> input;
-	data1.push_back(input);
+	student_names.push_back(input);
   }
 
   //write names to file
   output << "Students:\n";
   for (int i = 0; i < num1; i++)
   {
-    output << data1[i] << "\n";
+    output << student_names[i] << "\n";
   }
 
   // Get schools
@@ -51,7 +52,7 @@ int main(){
   for (int i = 0; i < num2; i++)
   {
 	  string input;
-	  data2.push_back(input);
+	  school_names.push_back(input);
 	  cin >> input;
   }
 
@@ -59,12 +60,38 @@ int main(){
   output << "Schools:\n";
   for (int i = 0; i < num1; i++)
   {
-    output << data2[i] << "\n";
+    output << school_names[i] << "\n";
+  }
+
+  bool trunc;
+  int max;
+
+  cout<<"Is the list truncated? (0 for no, 1 for yes)\n";
+  cin>>trunc;
+  if(trunc==0)
+  {
+
+    cout<<"max list length: ";
+    cin>>max;
+  }
+
+  for(int i = 0;i<num1;i++)
+  {
+    int num;
+    cout<<"Enter "<<student_names[i]<<"\'s school preferences: \n";
+    if(trunc==1)
+    {
+      num = max;
+    }
+    else
+    {
+      num = school_names.size();
+    }
+
   }
 
   string a;
   cin>>a;
-
 
   //close output file
    output.close();
@@ -75,21 +102,22 @@ int main(){
 vector<string> match(vector<string> students, vector<string> student_pref, vector<string> schools, vector<string> school_pref, string algo)
 {
 	//use vectors to match using some mechanism
+  char algo_char = algo[0];
     vector<string> outcome = students;
-    switch(algo)
+    switch(algo_char)
     {
-      case "Boston":
-    // code block
+      case 'B':
+          cout<<"Hi";
       break;
-      case "DA":
-    // code block
+      case 'D':
+          cout<<"Hi";
       break;
-      case "TTC":
-    // code block
+      case 'T':
+          cout<<"Hi";
       break;
       default:
-    // code block
-    }
+          cout<<"Hi";
+  }
     return outcome;
 }
 
